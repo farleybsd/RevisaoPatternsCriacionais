@@ -1,0 +1,11 @@
+﻿Contexto:
+
+Imagine que você está desenvolvendo um sistema para uma cafeteria onde os clientes podem personalizar suas bebidas (café, chá, chocolate quente, etc.) com diferentes complementos como leite, chantilly, caramelo, e outros.
+
+O objetivo é permitir que os clientes montem suas bebidas personalizadas combinando diferentes complementos, sem criar uma classe específica para cada possível combinação.
+
+Problema Resolvido pelo Decorator:
+
+As bebidas básicas (café, chá, etc.) devem ser tratadas como componentes principais.
+Cada complemento (leite, caramelo, etc.) é um decorador que "envolve" o componente principal, adicionando comportamento ou modificando o custo final da bebida.
+A lógica deve ser extensível para suportar novos complementos no futuro sem modificar as classes existentes.

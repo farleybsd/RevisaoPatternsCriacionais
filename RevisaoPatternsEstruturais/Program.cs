@@ -5,6 +5,9 @@ using RevisaoPatternsEstruturais.Bridge.MeiosDeTransporte;
 using RevisaoPatternsEstruturais.Bridge.Plataformas;
 using RevisaoPatternsEstruturais.Composite.Composite;
 using RevisaoPatternsEstruturais.Composite.TiposDeArquivos;
+using RevisaoPatternsEstruturais.Decorator.DecoratorComplementos;
+using RevisaoPatternsEstruturais.Decorator.TiposBebidas;
+using RevisaoPatternsEstruturais.Decorator;
 using RevisaoPatternsEstruturais.Ponte;
 
 UsuarioRequest usuario = new() {Nome = "Farley",Idade=32,Email="teste@teste.com" };
@@ -61,3 +64,17 @@ var duplicatedFolder = mainFolder.Duplicate();
 Console.WriteLine("\nEstrutura duplicada:");
 duplicatedFolder.Display();
 // # Fim 
+
+//# Decorator
+// Criando uma bebida básica
+Bebida minhaBebida = new Cafe();
+Console.WriteLine($"{minhaBebida.ObterDescricao()} - R${minhaBebida.ObterCusto():0.00}");
+
+// Adicionando complementos
+minhaBebida = new Leite(minhaBebida);
+minhaBebida = new Caramelo(minhaBebida);
+minhaBebida = new Chantilly(minhaBebida);
+
+// Exibindo descrição e custo final
+Console.WriteLine($"{minhaBebida.ObterDescricao()} - R${minhaBebida.ObterCusto():0.00}");
+// Fim Decorator
