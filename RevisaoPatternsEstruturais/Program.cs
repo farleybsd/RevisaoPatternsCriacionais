@@ -3,6 +3,8 @@ using RevisaoPatternsEstruturais.Adapter;
 using RevisaoPatternsEstruturais.Bridge;
 using RevisaoPatternsEstruturais.Bridge.MeiosDeTransporte;
 using RevisaoPatternsEstruturais.Bridge.Plataformas;
+using RevisaoPatternsEstruturais.Composite.Composite;
+using RevisaoPatternsEstruturais.Composite.TiposDeArquivos;
 using RevisaoPatternsEstruturais.Ponte;
 
 UsuarioRequest usuario = new() {Nome = "Farley",Idade=32,Email="teste@teste.com" };
@@ -32,3 +34,30 @@ metroMobile.EncerrarOperacao();
 bicicletaPainel.IniciarOperacao();
 bicicletaPainel.EncerrarOperacao();
 // #### Fim Bridge ###
+
+// # Composite 
+// Criando arquivos e pastas
+var file1 = new RevisaoPatternsEstruturais.Composite.TiposDeArquivos.File("logo.png", 2);
+var file2 = new RevisaoPatternsEstruturais.Composite.TiposDeArquivos.File("briefing.docx", 1);
+var file3 = new RevisaoPatternsEstruturais.Composite.TiposDeArquivos.File("inspiracao.jpg", 3);
+
+var subFolder = new Folder("Referências");
+subFolder.Add(file3);
+
+var mainFolder = new Folder("Projeto A");
+mainFolder.Add(file1);
+mainFolder.Add(file2);
+mainFolder.Add(subFolder);
+
+// Exibindo estrutura
+Console.WriteLine("Estrutura original:");
+mainFolder.Display();
+
+// Calculando tamanho total
+Console.WriteLine($"\nTamanho total: {mainFolder.GetSize()} MB");
+
+// Duplicando a estrutura
+var duplicatedFolder = mainFolder.Duplicate();
+Console.WriteLine("\nEstrutura duplicada:");
+duplicatedFolder.Display();
+// # Fim 

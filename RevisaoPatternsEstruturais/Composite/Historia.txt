@@ -1,0 +1,35 @@
+﻿Contexto:
+Você está desenvolvendo um sistema de organização de projetos para uma empresa de design gráfico. Esse sistema deve gerenciar diversos tipos de arquivos relacionados a projetos: imagens, documentos de texto, vídeos, e até mesmo pastas contendo outros arquivos e subpastas. O objetivo é criar uma solução que permita aos usuários realizar operações como visualizar informações, calcular o tamanho total, ou duplicar conteúdos de maneira uniforme, seja para um único arquivo ou para um grupo de arquivos dentro de uma pasta.
+
+Requisitos do Problema:
+
+Estrutura Hierárquica:
+Os arquivos e pastas devem ser organizados em uma hierarquia onde:
+
+Uma pasta pode conter outros arquivos ou subpastas.
+Um arquivo individual não pode conter outros arquivos.
+Operações Uniformes:
+O sistema deve permitir realizar operações como:
+
+Calcular o tamanho total de uma pasta (incluindo subpastas e seus arquivos).
+Exibir a estrutura de pastas e arquivos em um formato hierárquico.
+Aplicar operações específicas (como duplicar ou mover) tanto para arquivos individuais quanto para pastas inteiras.
+Flexibilidade e Extensibilidade:
+O sistema deve permitir adicionar novos tipos de arquivos no futuro, como arquivos comprimidos (.zip), que também podem conter outros arquivos dentro.
+
+Manutenção Simples:
+A lógica para manipular pastas e arquivos deve ser centralizada, para que os desenvolvedores não precisem escrever códigos duplicados para diferentes níveis da hierarquia.
+
+Exemplo de Cenário:
+
+Uma pasta chamada "Projeto A" contém:
+Um arquivo chamado "logo.png" (tamanho: 2MB).
+Um arquivo chamado "briefing.docx" (tamanho: 1MB).
+Uma subpasta chamada "Referências", que contém:
+Um arquivo chamado "inspiracao.jpg" (tamanho: 3MB).
+Uma subpasta chamada "Antigos", que está vazia.
+Se o usuário quiser calcular o tamanho total de "Projeto A", o sistema deve somar os tamanhos de todos os arquivos (6MB). Caso o usuário deseje duplicar "Projeto A", o sistema deve criar uma cópia da pasta, incluindo todos os seus arquivos e subpastas.
+
+Desafio:
+
+Como você estruturaria o sistema para atender a esses requisitos? Pense em como o padrão Composite pode ser aplicado para permitir que arquivos individuais e pastas (que podem conter outros elementos) sejam tratados de forma uniforme, simplificando a implementação de operações.
